@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
-  resources :home, only: [:index, :how, :open_source, :projects]
+  resources :home, only: [:index]
+  resources :how, only: [:show]
+  resources :projects, only: [:show]
+  resources :source, only: [:show]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
