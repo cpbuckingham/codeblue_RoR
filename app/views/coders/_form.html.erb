@@ -1,0 +1,29 @@
+<%= form_for(@coder) do |f| %>
+  <% if @coder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coder.errors.count, "error") %> prohibited this coder from being saved:</h2>
+
+      <ul>
+      <% @coder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
+  </div>
+  <div class="field">
+    <%= f.label :github_username %><br>
+    <%= f.text_area :github_username %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
