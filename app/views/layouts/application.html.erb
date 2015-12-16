@@ -1,14 +1,82 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-<head>
-  <title>Codeblue</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>CodeBlue</title>
+		<meta charset="utf-8" />
+		<link rel="icon" href="favicon.ico"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+	<body>
 
-<%= yield %>
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
 
-</body>
-</html>
+				<!-- Header -->
+					<header id="header">
+						<h1><%= link_to "CodeBlue", root_path %></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+                <%= link_to "Home", root_path%>
+                <br>
+								<%= link_to "How Does it Work", how_path%>
+                <br>
+                <%= link_to "Open Source", source_path%>
+                <br>
+                <%= link_to "Projects", projects_path%>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+        </div>
+        </body
+
+          <%=yield%>
+
+					<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">Register for CodeBlue</h2>
+							<p>In order to register for this service we ask that you provide your name, email, and gihub username. In order to reward you points you must provide a github username. In that way we can keep a record of how much you contribute to projects. </p>
+							<form method="post" action="#">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Github Username</label>
+									<input type="text" name="github_username" id="github_username" />
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Register" /></li>
+								</ul>
+							</form>
+							<ul class="contact">
+							</ul>
+							<ul class="copyright">
+								<li>&copy; cpbuckingham </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</section>
+					
+    </html>

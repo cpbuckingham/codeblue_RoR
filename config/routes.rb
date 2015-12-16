@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  resources :coders
   root 'home#index'
   resources :home, only: [:index]
-  resources :how, only: [:show]
-  resources :projects, only: [:show]
-  resources :source, only: [:show]
+
+  get "how" => "how#show", as: :how
+  get "projects" => "projects#show", as: :projects
+  get "source" => "source#show", as: :source
+
+  resources :coders
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

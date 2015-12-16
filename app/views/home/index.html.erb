@@ -4,49 +4,10 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
-	<head>
-		<title>CodeBlue</title>
-		<meta charset="utf-8" />
-		<link rel="icon" href="favicon.ico"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/main.css" />
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	</head>
-	<body>
-
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">CodeBlue</a></h1>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
-
-				<!-- Menu -->
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="how.html">How Does it work?</a></li>
-								<li><a href="open_source.html">Open Source</a></li>
-								<li><a href="projects.html">Projects</a></li>
-								<li><a href="admin.html">Admin</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
-
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<div class="logo"><a href="#" class="image"><img src="/assets/blue_avatar.png" alt="" /></a></div>
+							<div class="logo"><img src="/assets/blue_avatar.png" alt="" /></div>
 							<h2>Welcome to CodeBlue</h2>
 							<p>Code ... Merge ... Reward</p>
 						</div>
@@ -58,11 +19,11 @@
 						<!-- One -->
 							<section id="one" class="wrapper spotlight style1">
 								<div class="inner">
-									<a href="how.html" class="image"><img src="/assets/pacman-teal.png" alt="" /></a>
+									<img src="/assets/pacman-teal.png" alt="" class="image" />
 									<div class="content">
 										<h2 class="major">What is CodeBlue</h2>
 										<p> CodeBlue rewards people who contribute to open source and sponsored projects. Use your github account to explore open source projects then create a pull request for projects that interest you.  </p>
-										<a href="how.html" class="special">Learn more</a>
+										<%= link_to "Learn More", how_path, class: "special"  %>
 									</div>
 								</div>
 							</section>
@@ -70,11 +31,11 @@
 						<!-- Two -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="open_source.html" class="image"><img src="/assets/pacman-robins_egg.png" alt="" /></a>
+									<img src="/assets/pacman-robins_egg.png" alt="" class="image" />
 									<div class="content">
 										<h2 class="major">Open Source Projects</h2>
 										<p>Here we use a lot of open source projects to drive innovation. Clone any one of those projects, write some features, submit a pull request, and earn points! Its that easy.</p>
-										<a href="open_source.html" class="special">Learn more</a>
+										<%= link_to "Learn More", source_path, class: "special"  %>
 									</div>
 								</div>
 							</section>
@@ -82,11 +43,11 @@
 						<!-- Three -->
 							<section id="three" class="wrapper spotlight style3">
 								<div class="inner">
-									<a href="projects.html" class="image"><img src="/assets/pacman-blue.png" alt="" /></a>
+									<img src="/assets/pacman-blue.png" alt="" class="image" />
 									<div class="content">
 										<h2 class="major">Sponsored Projects</h2>
 										<p>Wish you had funding to keep your application development going? Well, submit your project to the Innovation group and have it published on CodeBlue for ongoing development. Have an MVP built in a couple of days by developers that work in house. </p>
-										<a href="projects.html" class="special">Learn more</a>
+										<%= link_to "Learn More", projects_path, class: "special"  %>
 									</div>
 								</div>
 							</section>
@@ -98,25 +59,25 @@
 									<p> There are a variety of projects that you can contribute too to earn points. We have two different kinds, open source and sponsored projects. Open source are projects that are public github projects, sponsored projects are projects being worked on in-house. </p>
 									<section class="features">
 										<article>
-											<a href="https://true-story.herokuapp.com/" class="image"><img src="/assets/truestory.png" alt="" /></a>
+											<img src="/assets/truestory.png" alt="" class="image" />
 											<h3 class="major">True Story </h3>
 											<p> Help improve an application that takes annoymous input from a group during an agile retrospective. Just step into the room and see people vote on topics and leave comments annoymously. </p>
 											<a href="https://github.com/cpbuckingham/True-Story" class="special">Github Link</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="/assets/codeblue.png" alt="" /></a>
+											<img src="/assets/codeblue.png" alt="" class="image"/></a>
 											<h3 class="major">CodeBlue</h3>
 											<p>In order to keep this tool working great, we want the best talent contributing. Help this application provide accurate metrics and backend services that keeps the system fast and sustainable. </p>
 											<a href="https://github.com/cpbuckingham/codeblue" class="special">Github Link </a>
 										</article>
 										<article>
-											<a href="https://github.com/showcases/open-source-organizations" class="image"><img src="/assets/open_source.png" alt="" /></a>
+											<img src="/assets/open_source.png" alt="" class="image" />
 											<h3 class="major">Open Source</h3>
 											<p>A list of popular repos that always need more contributors to help make great products. Fork these repos and play around with powerful code. </p>
 											<a href="https://github.com/showcases/open-source-organizations" class="special">Find more</a>
 										</article>
 										<article>
-											<a href="https://github.com/explore" class="image"><img src="/assets/git_open_source.png" alt="" /></a>
+											<img src="/assets/git_open_source.png" alt="" class="image"/>
 											<h3 class="major">Exlpore Technology</h3>
 											<p>Not a coder? That is okay, explore open source materials, learn how to use github, and contribute in other ways.</p>
 											<a href="https://github.com/explore" class="special">Learn more</a>
@@ -128,35 +89,6 @@
 
 					</section>
 
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Register for CodeBlue</h2>
-							<p>In order to register for this service we ask that you provide your name, email, and gihub username. In order to reward you points you must provide a github username. In that way we can keep a record of how much you contribute to projects. </p>
-							<form method="post" action="#">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Github Username</label>
-									<input type="text" name="github_username" id="github_username" />
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Register" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-							</ul>
-							<ul class="copyright">
-								<li>&copy; cpbuckingham </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
 
 			</div>
 
