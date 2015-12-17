@@ -1,19 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @coder.name %>
-</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @coder.email %>
-</p>
 
-<p>
-  <strong>Github username:</strong>
-  <%= @coder.github_username %>
-</p>
+<div id="page-wrapper">
+<br><br>
+<section id="footer">
+  <div class="inner">
 
-<%= link_to 'Edit', edit_coder_path(@coder) %> |
-<%= link_to 'Back', coders_path %>
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @coder.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= @coder.email %>
+    </p>
+
+    <p>
+      <strong>Github username:</strong>
+      <%= @coder.github_username %>
+    </p>
+
+    <%= link_to 'Edit', edit_coder_path(@coder), class: "special"   %>
+    <%= link_to 'Back', root_path, class: "special"   %>
+
+  </div>
+</section>
+</div>
+<!-- Scripts -->
+<script src="/js/skel.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>

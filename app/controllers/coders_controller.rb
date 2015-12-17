@@ -4,7 +4,9 @@ class CodersController < ApplicationController
   # GET /coders
   # GET /coders.json
   def index
-    @coders = Coder.all
+    # @coder = Coder.new
+    @coder = Coder.all
+
   end
 
   # GET /coders/1
@@ -28,8 +30,9 @@ class CodersController < ApplicationController
 
     respond_to do |format|
       if @coder.save
-        format.html { redirect_to @coder, notice: 'Coder was successfully created.' }
-        format.json { render :show, status: :created, location: @coder }
+        format.html { redirect_to coder_path(@coder), notice: 'Coder was successfully created.' }
+
+        format.json { render :index, status: :created, location: @coder }
       else
         format.html { render :new }
         format.json { render json: @coder.errors, status: :unprocessable_entity }
@@ -42,8 +45,8 @@ class CodersController < ApplicationController
   def update
     respond_to do |format|
       if @coder.update(coder_params)
-        format.html { redirect_to @coder, notice: 'Coder was successfully updated.' }
-        format.json { render :show, status: :ok, location: @coder }
+        format.html { redirect_to coder_path, notice: 'Coder was successfully updated.' }
+        format.json { render :index, status: :ok, location: @coder }
       else
         format.html { render :edit }
         format.json { render json: @coder.errors, status: :unprocessable_entity }
@@ -56,7 +59,7 @@ class CodersController < ApplicationController
   def destroy
     @coder.destroy
     respond_to do |format|
-      format.html { redirect_to coders_url, notice: 'Coder was successfully destroyed.' }
+      format.html { redirect_to admin_path, notice: 'Coder was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

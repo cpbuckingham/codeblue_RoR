@@ -8,10 +8,10 @@
 	<head>
 		<title>CodeBlue</title>
 		<meta charset="utf-8" />
-		<link rel="icon" href="favicon.ico"/>
+		<link rel="icon" href="/favicon.ico"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
@@ -40,6 +40,10 @@
                 <%= link_to "Open Source", source_path%>
                 <br>
                 <%= link_to "Projects", projects_path%>
+								<br>
+                <%= link_to "Register", new_coder_path%>
+								<br>
+                <%= link_to "Admin", admin_index_path%>
 							</ul>
 							<a href="#" class="close">Close</a>
 						</div>
@@ -49,34 +53,12 @@
 
           <%=yield%>
 
-					<!-- Footer -->
 					<section id="footer">
 						<div class="inner">
-							<h2 class="major">Register for CodeBlue</h2>
-							<p>In order to register for this service we ask that you provide your name, email, and gihub username. In order to reward you points you must provide a github username. In that way we can keep a record of how much you contribute to projects. </p>
-							<form method="post" action="#">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="email" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Github Username</label>
-									<input type="text" name="github_username" id="github_username" />
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Register" /></li>
-								</ul>
-							</form>
-							<ul class="contact">
-							</ul>
-							<ul class="copyright">
-								<li>&copy; cpbuckingham </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-					
+					<ul class="copyright">
+			      <li>&copy; cpbuckingham </li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+			    </ul>
+				</div>
+				</section>
+
     </html>

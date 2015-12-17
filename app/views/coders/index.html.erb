@@ -1,31 +1,21 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Coders</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Github username</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @coders.each do |coder| %>
-      <tr>
-        <td><%= coder.name %></td>
-        <td><%= coder.email %></td>
-        <td><%= coder.github_username %></td>
-        <td><%= link_to 'Show', coder %></td>
-        <td><%= link_to 'Edit', edit_coder_path(coder) %></td>
-        <td><%= link_to 'Destroy', coder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Coder', new_coder_path %>
+<div id="page-wrapper">
+<br><br>
+<section id="footer">
+  <div class="inner">
+    <h2 class="major">Register for CodeBlue</h2>
+    <p>In order to register for this service we ask that you provide your name, email, and gihub username. In order to reward you points you must provide a github username. In that way we can keep a record of how much you contribute to projects. </p>
+    <%= render "/coders/form" %>
+    <br><br>
+    <p id="notice"><%= notice %></p>
+  </div>
+</section>
+</div>
+<!-- Scripts -->
+<script src="/js/skel.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>

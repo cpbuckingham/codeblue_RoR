@@ -1,5 +1,21 @@
-<h1>New Coder</h1>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', coders_path %>
+<div id="page-wrapper">
+<br><br>
+<section id="footer">
+  <div class="inner">
+    <h2 class="major">Register for CodeBlue</h2>
+    <p>In order to register for this service we ask that you provide your name, email, and gihub username. In order to reward you points you must provide a github username. In that way we can keep a record of how much you contribute to projects. </p>
+    <%= render "/coders/form" %>
+    <br><br>
+    <p id="notice"><%= notice %></p>
+  </div>
+</section>
+</div>
+<!-- Scripts -->
+<script src="/js/skel.min.js"></script>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/jquery.scrollex.min.js"></script>
+<script src="/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/js/main.js"></script>
