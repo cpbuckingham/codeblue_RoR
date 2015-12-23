@@ -4,6 +4,4 @@ Else to do:
 spans out (only last month) ***Use 24pullrequests***
 
 2. Admin can press a button to email coders their
-num_of_PR * 250 points ***Use Rantly***
-
-3.
+num_of_PR * 250 points ***Use Rantly
