@@ -27,8 +27,15 @@
         <td><%= coder.github_username %></td>
         <td><%= link_to 'Show', coder %><br><%= link_to 'Edit', edit_coder_path(coder) %></td>
         <td>
-					<!-- <%= link_to "Gather PR", class:"button small fit" %><br><%= link_to "Reward", class:"button special small fit" %> -->
-					<%= form_for coder, :method => :delete do |f| %><%= f.submit "Delete" %><% end %>
+					<%= link_to pull_request_download_path, :id => 'fetch-pull-requests', :rel => 'tooltip', :title => t('pull_request.download.tooltip') do =%>
+					  <%= t('admin.synchronize') %>
+						<% end %>
+						<% if pull_requests.any? %>
+						<%=pull_requests.year(current_year).count%>
+				<%= form_for coder, :method => :delete do |f| %><%= f.submit "Delete" %>
+				<% end %>
+				<% end %>
+
 				</td>
       </tr>
     <% end %>
