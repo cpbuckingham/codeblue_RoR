@@ -1,11 +1,20 @@
 class GithubService < ActiveRecord::Base
 
-  def create
-    @coder = Coder.find(params[:id])
-    Downloader.new(@coder).get_pull_requests
-    pull_requests = @coder.pull_requests.year(current_year).order('created_at desc')
-    @coder.send_points_awarded_email
-
-    render :create, locals: { pull_requests: pull_requests }, layout: false
+  def initialize
+    @github = Github.new
   end
+
+  def retrieve_pull_requests(usernames)
+    usernames.map do |username|
+      {
+        username: username,
+        pull_requests: retrieve_pull_requests(username)
+      }
+    end
+  end
+
+  def retrieve_pull_requests(username)
+    @github.repos(username).map { |repo| repo.pulls.count}.inject(:+)
+  end
+
 end
