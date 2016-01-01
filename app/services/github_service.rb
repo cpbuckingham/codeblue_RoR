@@ -1,4 +1,4 @@
-class PullRequestDownloadsController < ApplicationController
+class GithubService < ActiveRecord::Base
 
   def create
     @coder = Coder.find(params[:id])
