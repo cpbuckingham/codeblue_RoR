@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
   def show
     @coders = Coder.all
-    pull_requests = @coders.pull_requests.year(current_year).order('created_at desc')
+    @pull_requests = @coders.pull_requests('2015')
 
   end
 
@@ -15,9 +15,6 @@ class AdminController < ApplicationController
 end
 
 private
-  def pull_requests
-    PullRequest.year(current_year).order('created_at desc').includes(:user)
-  end
 # def check_if_admin
 #   unless (current_user.admin or session[:admin_id])
 #     redirect_to "/"

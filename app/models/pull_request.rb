@@ -7,6 +7,7 @@ class PullRequest < ActiveRecord::Base
     where(AggregationFilter.pull_request_filter)
   }
 
+  CURRENT_YEAR = '2015'
   EARLIEST_PULL_DATE = Date.parse("01/12/#{CURRENT_YEAR}").midnight
   LATEST_PULL_DATE   = Date.parse("25/12/#{CURRENT_YEAR}").midnight
 
@@ -31,6 +32,15 @@ class PullRequest < ActiveRecord::Base
         language:   json['repo']['language']
       }
     end
+
+    def download_pull_requests
+     github_client.user_events.select do |e|
+     event_date = e['created_at']
+     e.type == 'PullRequestEvent' &&
+     e.payload.action == 'opened' &&
+     event_date >= PullRequest::EARLIEST_PULL_DATE &&
+     event_date <= PullRequest::LATEST_PULL_DATE
+   end
 
     def in_date_range?
       EARLIEST_PULL_DATE < Time.zone.now && Time.zone.now < LATEST_PULL_DATE
