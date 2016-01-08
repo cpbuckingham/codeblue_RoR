@@ -30,8 +30,8 @@
 					<%= link_to pull_request_download_path, :id => 'fetch-pull-requests', :rel => 'tooltip', :title => t('pull_request.download.tooltip') do =%>
 					  <%= t('admin.synchronize') %>
 						<% end %>
-						<% if pull_requests.any? %>
-						<%=pull_requests.year(current_year).count%>
+						<% if @pull_requests.any? %>
+						<%= @pull_requests.year(current_year).count%>
 				<%= form_for coder, :method => :delete do |f| %><%= f.submit "Delete" %>
 				<% end %>
 				<% end %>

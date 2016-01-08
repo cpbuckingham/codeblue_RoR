@@ -3,21 +3,21 @@ class AdminController < ApplicationController
 
   def show
     @coders = Coder.all
-    pull_requests = @coders.pull_requests.year(current_year).order('created_at desc')
+    @pull_requests = github_client.pull_requests(@coders)
 
   end
 
   def index
   end
 
-
-
 end
 
 private
-  def pull_requests
-    PullRequest.year(current_year).order('created_at desc').includes(:user)
+
+  def github_client
+    GithubService.new
   end
+
 # def check_if_admin
 #   unless (current_user.admin or session[:admin_id])
 #     redirect_to "/"
