@@ -35,6 +35,11 @@ class PullRequest < ActiveRecord::Base
     def in_date_range?
       EARLIEST_PULL_DATE < Time.zone.now && Time.zone.now < LATEST_PULL_DATE
     end
+
+    def self.pull_requests
+      PullRequest.year(current_year).order('created_at desc').includes(:user)
+    end
+
   end
 
 end
