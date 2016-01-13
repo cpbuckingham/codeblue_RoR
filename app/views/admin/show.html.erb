@@ -25,9 +25,16 @@
         <td><%= coder.name %></td>
         <td><%= coder.email %></td>
         <td><%= coder.github_username %></td>
-        <td><%= link_to 'Show', coder %><br><%= link_to 'Edit', edit_coder_path(coder) %><br> <%= link_to 'Gather PR', edit_coder_path(coder) %></td>
-        <td>
-				</td>
+        <td><%= link_to 'Show', coder %><br>
+						<%= link_to 'Edit', edit_coder_path(coder) %><br>
+						<%= link_to 'Gather PR', edit_coder_path(coder) %></td>
+						<td>
+    			<!-- <% if coder.pull_requests.year(current_year).any? %>
+      				<span>
+									<%= coder.pull_requests.year(current_year).count %>
+							</span>
+							<% end %>
+						</td> -->
       </tr>
     <% end %>
   </tbody>

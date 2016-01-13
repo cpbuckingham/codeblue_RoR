@@ -7,8 +7,8 @@ class PullRequest < ActiveRecord::Base
     where(AggregationFilter.pull_request_filter)
   }
 
-  EARLIEST_PULL_DATE = Date.parse("01/12/#{CURRENT_YEAR}").midnight
-  LATEST_PULL_DATE   = Date.parse("25/12/#{CURRENT_YEAR}").midnight
+  EARLIEST_PULL_DATE = Date.parse("01/10/2015").midnight
+  LATEST_PULL_DATE   = Date.parse("01/10/2016").midnight
 
   class << self
     def active_users(year)
@@ -37,7 +37,7 @@ class PullRequest < ActiveRecord::Base
     end
 
     def self.pull_requests
-      PullRequest.year(current_year).order('created_at desc').includes(:user)
+      PullRequest.year(current_year).order('created_at desc').includes(:coder)
     end
 
   end
