@@ -28,6 +28,7 @@ gem 'json', '~> 1.8', '>= 1.8.3'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'faraday', '~> 0.9.2'
+gem 'github_api', '~> 0.13.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
