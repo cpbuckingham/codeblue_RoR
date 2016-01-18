@@ -5,6 +5,7 @@ class AdminController < ApplicationController
     @coders = Coder.all
     github = Github.new user: 'cpbuckingham', repo: 'codeblue_RoR'
     @pr = github.pull_requests.list
+    UserMailer.points_awarded_email(@coders).deliver
     # @coder = Coder.find(params[:id])
     # pull_requests = @coder.pull_requests.year(current_year).order('created_at desc')
   end

@@ -4,7 +4,8 @@ class UserMailer < ActionMailer::Base
   def points_awarded_email(coder)
   @coder = coder
   github = Github.new user: 'cpbuckingham', repo: 'codeblue_RoR'
-  @pr = github.pull_requests.list
+  pr = github.pull_requests.list
+  @points = pr.count * 250
   mail(to: coder.email, subject: "Points for Coding")
 
 end
