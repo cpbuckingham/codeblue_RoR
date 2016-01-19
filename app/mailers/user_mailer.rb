@@ -6,6 +6,7 @@ class UserMailer < ActionMailer::Base
   github = Github.new user: 'cpbuckingham', repo: 'codeblue_RoR'
   pr = github.pull_requests.list
   @points = pr.count * 250
-  mail(to: coder.email, subject: "Points for Coding")
+  # mail(to: coder.email, subject: "Points for Coding")
 
+end
 end
